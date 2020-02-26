@@ -1,0 +1,16 @@
+# Ignore node related modules & files
+/node_modules
+
+# Ignore Config
+/app/config/auth.keys.json
+/app/config/db.config.json
+
+# Ignore Logs
+/logs
+*.log
+
+# Ignore PM2 Development Config
+/pm2.development.json
+
+# Ignore .env
+/.env

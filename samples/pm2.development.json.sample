@@ -1,0 +1,23 @@
+{
+  "name": "red-dev",
+  "script": "./server.js",
+  "watch": true,
+  "watch_delay": 1000,
+  "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+  "ignore_watch": [
+    "node_modules",
+    "*.log",
+    "src",
+    "gulpfile.js",
+    "yarn.*",
+    "dist",
+    ".gitignore",
+    "package.json",
+    "*.ejs",
+    "samples"
+  ],
+  "watch_options": {
+    "followSymlinks": false
+  },
+  "args": ["--color"]
+}

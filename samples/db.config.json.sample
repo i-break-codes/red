@@ -1,0 +1,15 @@
+{
+  "mongo": {
+    "name": "red",
+    "username": "",
+    "password": "",
+    "host": "localhost",
+    "port": 27017
+  },
+  "redis": {
+    "host": "localhost",
+    "port": 6379,
+    "ttl": 2592000,
+    "secret": "R4ND0M_JUNK"
+  }
+}
