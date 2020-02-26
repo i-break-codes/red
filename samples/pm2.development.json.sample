@@ -7,14 +7,12 @@
   "ignore_watch": [
     "node_modules",
     "*.log",
-    "src",
-    "gulpfile.js",
     "yarn.*",
-    "dist",
     ".gitignore",
     "package.json",
-    "*.ejs",
-    "samples"
+    "samples",
+    ".nvmrc",
+    "README.md"
   ],
   "watch_options": {
     "followSymlinks": false
