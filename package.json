@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev:app:setup": "nvm use; yarn install; mkdir ./app/config; cp ./samples/.env.sample .env; cp ./samples/pm2.development.json.sample pm2.development.json; cp ./samples/db.config.json.sample ./app/config/db.config.json; cp ./samples/auth.keys.json.sample ./app/config/auth.keys.json;",
+    "dev:app:setup": "nvm use; yarn install; cp ./samples/.env.sample .env; cp ./samples/pm2.development.json.sample pm2.development.json; cp ./samples/db.config.json.sample ./app/config/db.config.json; cp ./samples/auth.keys.json.sample ./app/config/auth.keys.json;",
     "dev:app:run": "nvm use; pm2 start pm2.development.json",
     "dev:app:reload": "pm2 reload pm2.development.json",
     "dev:app:stop": "pm2 stop pm2.development.json"
