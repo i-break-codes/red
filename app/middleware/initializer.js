@@ -8,6 +8,7 @@ const redisStore = require('connect-redis')(expressSession);
 const redisClient = redis.createClient();
 const cookieParser = require('cookie-parser');
 const authRoutes = require('@routes/Authentication');
+const dashboardRoutes = require('@routes/Dashboard');
 const authenticationController = require('@middleware/Authentication');
 const cors = require('cors');
 
@@ -52,6 +53,7 @@ module.exports = app => {
 
   //* Load Base Routes
   app.use('/', authRoutes);
+  app.use('/dashboard', dashboardRoutes);
 
   //! Exception Handler Middleware
   app.use(globalErrorHandler.exceptionHandlingMiddleware);
