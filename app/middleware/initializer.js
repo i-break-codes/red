@@ -15,6 +15,10 @@ module.exports = app => {
   //* Enable Cross-Origin
   app.use(cors());
 
+  //* Set EJS View Engine
+  app.set("view engine", "ejs");
+  app.set('views', 'app/views');
+
   //* Stream HTTP requests to Info Logs
   app.use(morgan('combined', {
     stream: logger.winstonLogger.stream
