@@ -5,12 +5,8 @@ const requestIp = require('request-ip');
 
 class UserController {
   static create(req, accessToken, refreshToken, userProfileData, done) {
-    if(userProfileData.provider === 'facebook' && userProfileData.emails === undefined) {
-      done(null, false);
-      return;
-    }
-
-    let email = userProfileData.emails[0].value, provider = userProfileData.provider;
+    let email = userProfileData.emails[0].value,
+        provider = userProfileData.provider;
 
     user.findOne({
       providerId: userProfileData.id
@@ -35,20 +31,6 @@ class UserController {
             });
           break;
 
-          //! Unused For Now
-          case 'facebook':
-            registerUser = new user({
-              firstName: userProfileData.name.givenName ? userProfileData.name.givenName : '',
-              lastName: userProfileData.name.familyName ? userProfileData.name.familyName : '',
-              email: email,
-              providerId: userProfileData.id,
-              displayName: (userProfileData.name.givenName || '') + ' ' + (userProfileData.name.familyName || ''),
-              provider: userProfileData.provider,
-              photo: userProfileData.photos[0].value,
-              profileURL: userProfileData.profileUrl,
-              lastSignedInIP: lastSignedInIP
-            });
-          break;
           default:
             throw 'Something went wrong';
         }
@@ -68,8 +50,6 @@ class UserController {
     }, (err, data) => {
       if(err)
         throw err;
-
-        console.log(data);
 
       done(null, data);
     });

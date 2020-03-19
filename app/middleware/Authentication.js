@@ -3,11 +3,7 @@ const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const userController = require('@controllers/User');
 
 class Authentication {
-  constructor() {
-    this.authenticate();
-  }
-
-  authenticate() {
+  passportStrategy() {
     passport.serializeUser((user, done) => {
       done(null, user.providerId);
     });
@@ -24,6 +20,10 @@ class Authentication {
         passReqToCallback: true
       }, userController.create
     ));
+  }
+
+  isAuthenticated(req, res, next) {
+    req.isAuthenticated() ? next() : res.redirect('/');
   }
 }
 

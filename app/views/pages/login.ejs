@@ -4,9 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RED - Lightweight Node.js Boilerplate</title>
+    <style>
+      /* Remove these, just for presentation purpose */
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        font-family: Quicksand, sans-serif;
+        background: linear-gradient(to right, #cb2d3e, #ef473a);
+        color: #212121;
+      }
+
+      .sign-in {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        text-align: center;
+      }
+
+      h1 {
+        font-weight: inherit;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      h1 span {
+        color: #fff;
+        font-size: 120px;
+        display: block;
+        font-weight: 300;
+      }
+
+      a {
+        padding: 10px 30px;
+        border-radius: 3px;
+        background-color: #fff;
+        text-transform: uppercase;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 16px;
+        color: inherit;
+        display: inline-block;
+        margin-top: 50px;
+        border: 1px solid transparent;
+        transition: all 150ms ease-in;
+      }
+
+      a:hover {
+        border-color: #fff;
+        background-color: transparent;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
-    <h1>Red - Lightweight Node.js Boilerplate</h1>
-    <a href="/auth/google">Sign-in</a>
+    <div class="sign-in">
+      <h1><span>RED</span> A Lightweight Node.js Boilerplate</h1>
+      <a href="/auth/google">Sign-in</a>
+    </div>
   </body>
 </html>

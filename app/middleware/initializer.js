@@ -9,7 +9,7 @@ const redisClient = redis.createClient();
 const cookieParser = require('cookie-parser');
 const authRoutes = require('@routes/Authentication');
 const dashboardRoutes = require('@routes/Dashboard');
-const authenticationController = require('@middleware/Authentication');
+const authMiddleware = require('@middleware/Authentication');
 const cors = require('cors');
 
 module.exports = app => {
@@ -24,6 +24,8 @@ module.exports = app => {
   app.use(morgan('combined', {
     stream: logger.winstonLogger.stream
   }));
+
+  authMiddleware.passportStrategy();
 
   app.use(cookieParser());
 
